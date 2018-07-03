@@ -1,0 +1,22 @@
+[
+    {
+        "id": 0,
+        "itemname": "Angel Hair Dye (Vermillion Red)",
+        "quantity": 10
+    },
+    {
+        "id": 1,
+        "itemname": "Angel Hair Dye (Bold Brown)",
+        "quantity": 2
+    },
+    {
+        "id": 3,
+        "itemname": "Barbasol (1 Gal)",
+        "quantity": 1
+    },
+    {
+        "id": 4,
+        "itemname": "Smells Like Heaven Conditioner",
+        "quantity": 5
+    }
+]
