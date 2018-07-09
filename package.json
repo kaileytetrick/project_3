@@ -1,0 +1,32 @@
+{
+  "name": "finalproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "cd salonstuff && yarn start",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaileytetrick/finalproject.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kaileytetrick/finalproject/issues"
+  },
+  "homepage": "https://github.com/kaileytetrick/finalproject#readme",
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "mongodb": "^3.0.10",
+    "mongoose": "^5.1.7"
+  },
+  "devDependencies": {
+    "concurrently": "^3.6.0"
+  }
+}
