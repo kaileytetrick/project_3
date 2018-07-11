@@ -1,5 +1,5 @@
 module.exports = function (mongoose) {
-    mongoose.connect(process.env.MONGODB)
+    mongoose.connect(process.env.MONGODB, {useNewUrlParser: true})
 
     var db = mongoose.connection;
     db.on('error', console.error.bind(console, 'connection error:'));

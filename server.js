@@ -1,4 +1,4 @@
-require("dotenv");
+require("dotenv").config();
 var mongoose = require("mongoose");
 require('./config/dbConnection')(mongoose);
 var express = require("express");
