@@ -3,7 +3,10 @@ import './App.css';
 import Wrapper from "./components/Wrapper";
 import CurrentStash from "./components/CurrentStash"
 import Add from "./components/Add";
+import Footer from "./components/Footer";
 import tester from "./tester.json";
+import logo from './images/logo.png';
+import API from "./utils/API";
 
 class App extends Component {
   state = {
@@ -37,6 +40,7 @@ class App extends Component {
       </p>
 
       <Add />
+      <Footer />
   </div>
     )
     }
