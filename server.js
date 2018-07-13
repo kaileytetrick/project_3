@@ -23,14 +23,14 @@ require('./config/dbConnection')(mongoose);
 
 
 //route imports
-const userRoutes = require('./api/routes/userRoutes');
+// const userRoutes = require('./api/routes/userRoutes');
 // const tokenRoutes = require('./api/routes/tokenRoutes');
 const authRoutes = require('./api/routes/authRoutes');
 
 
 //routes
 // app.use('/apiToken', tokenRoutes)
-app.use('/apiUser', authCheck, userRoutes);
+// app.use('/apiUser', authCheck, userRoutes);
 app.use('/authRoute', authRoutes)
 
 

@@ -9,11 +9,11 @@ var UserSchema = new Schema({
   // `name` must be unique and of type String
   username: {
     type: String,
-    unique: true
+
   },
   password: {
      type: String,
-     unique: false
+
   }
 
 });
