@@ -4,7 +4,9 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "npm": "^6.2.0",
     "react": "^16.4.1",
+    "react-bootstrap": "^0.32.1",
     "react-dom": "^16.4.1",
     "react-google-login": "^3.2.1",
     "react-router-dom": "^4.3.1",

@@ -1,3 +1,10 @@
 .add {
     font-weight:bold;
 }
+
+.main {
+    border: solid black;
+    width: 50%;
+    background: green;
+
+}
