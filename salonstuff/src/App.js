@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import './App.css';
 import Wrapper from "./components/Wrapper";
 import CurrentStash from "./components/CurrentStash"
-import Add from "./components/Add";
+// import Add from "./components/Add";
 import Footer from "./components/Footer";
 import tester from "./tester.json";
 import logo from './images/logo.png';
 import API from "./utils/API";
+import Navbar from "./components/Navbar/Navbar";
 
 class App extends Component {
   state = {
@@ -19,12 +20,6 @@ class App extends Component {
     const username = "Sammy";
     return (
       <div className="App">
-      <header className="App-header">
-          <p className="login text-right">Account | Log Out</p>
-          <h1 className="App-title">Salon Stasher</h1>
-      </header>
-      <header className="App-header-bot">
-      </header>
       <br />
       <font className="intro">Welcome to your Salon Stasher, {username}!</font><p>
       <Wrapper>
@@ -39,7 +34,7 @@ class App extends Component {
       </Wrapper>
       </p>
 
-      <Add />
+      {/* <Add /> */}
       <Footer />
   </div>
     )
