@@ -5,6 +5,7 @@ import Navbar from "../Navbar/Navbar";
 import Login from "../Login/Login";
 import Signup from "../Signup/Signup";
 
+
 class Main extends React.Component {
     render() {
         return(
@@ -14,6 +15,7 @@ class Main extends React.Component {
                 <Route exact path="/" component={App}/>
                 <Route exact path="/login" component={Login}/>
                 <Route exact path="/signup" component={Signup}/>
+    
             </Switch>
             </Fragment>
         )

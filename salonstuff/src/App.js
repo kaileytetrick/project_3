@@ -5,9 +5,10 @@ import CurrentStash from "./components/CurrentStash/CurrentStash";
 // import Add from "./components/Add";
 import Footer from "./components/Footer";
 import tester from "./tester.json";
-import logo from './images/logo.png';
-import API from "./utils/API";
-import Navbar from "./components/Navbar/Navbar";
+// import logo from './images/logo.png';
+// import API from "./utils/API";
+// import Navbar from "./components/Navbar/Navbar";
+import Add from "./components/Add/Add";
 
 class App extends Component {
   state = {
@@ -34,7 +35,7 @@ class App extends Component {
       </Wrapper>
       </p>
 
-      {/* <Add /> */}
+      <Add />
       <Footer />
   </div>
     )
