@@ -7,10 +7,14 @@ import Signup from "../Signup/Signup";
 
 
 class Main extends React.Component {
+    state={
+        isloggedin: false
+    }
+    logout =() => {}
     render() {
         return(
             <Fragment>
-                <Navbar/>
+                <Navbar isloggedin={this.state.isloggedin}/>
             <Switch> 
                 <Route exact path="/" component={App}/>
                 <Route exact path="/login" component={Login}/>

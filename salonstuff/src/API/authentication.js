@@ -20,7 +20,10 @@ class Authentication {
         },
       })
         .then((result) => {
-          localStorage.setItem(tokenName, result.data.token);
+          console.log('test')
+          console.log(result.data.token)
+
+          localStorage.setItem('tkid', result.data.token);
           resolve(result);
         })
         .catch((err) => {

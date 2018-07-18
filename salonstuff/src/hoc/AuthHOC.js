@@ -29,7 +29,7 @@ const withAuthentication = AuthComponent =>
               isLoggedIn: true,
             });
             // updates isLoggedIn in App component
-            this.props.updateAuth();
+            // this.props.updateAuth();
             this.props.history.push('/');
           } else {
             this.setState({

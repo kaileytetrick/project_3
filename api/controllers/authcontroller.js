@@ -15,19 +15,19 @@ exports.user_login = (req, res, next) => {
         });
       }
       req.login(user, { session: false }, (err) => {
+        // console.log('USER----->',user)
         if (err) { res.send(err) }
         const userData = {
           id: user._id,
-          firstName: user.firstName,
-          lastName: user.lastName,
-          role: user.role
         }
+        console.log(userData)
         // asycnronous
         jwt.sign(userData, process.env.JWT_SECRET, tokenExpTime, (err, token)=>{
+          console.log(token)
           if(err) {
             res.status(400).json({message: 'error creating auth token'})
           } else {
-            res.status(200).json({ level: userData.role, token: token })
+            res.status(200).json({ token: token })
           }
         })
       })
@@ -38,6 +38,7 @@ exports.user_login = (req, res, next) => {
 exports.user_signup = (req, res, next) => {
   const reqEmail = req.body.email
   const reqPassword = req.body.password
+  console.log(reqEmail, reqPassword);
 
   if(reqEmail === '' || reqPassword === ''){
     return res.status(400).json({message: "Email or password can not be empty."})
