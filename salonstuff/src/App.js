@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Wrapper from "./components/Wrapper";
-import CurrentStash from "./components/CurrentStash"
+import CurrentStash from "./components/CurrentStash/CurrentStash";
 // import Add from "./components/Add";
 import Footer from "./components/Footer";
 import tester from "./tester.json";
