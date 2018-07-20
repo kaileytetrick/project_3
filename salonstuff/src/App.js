@@ -62,7 +62,6 @@ class App extends Component {
   
 
   render() {
-    const username = "Sammy";
     return (
       <div className="App">
       <br />
@@ -72,20 +71,19 @@ class App extends Component {
       </header>
       <header className="App-header-bot">
       </header>
-      <font className="intro">Welcome to your Salon Stasher, {username}!</font><p>
       <Wrapper>
         
       {this.state.stash.map((item, index) => (
       <CurrentStash 
       key={index}
       id={item.id}
+      category={item.category}
       itemname={item.name ? item.name : item.category}
       quantity={item.quantity}
       passUpUpdatedStash={this.getUpdatedStashFromCurrentStash}
       />
       ))}
       </Wrapper>
-      </p>
 
       <Add />
       <Footer />

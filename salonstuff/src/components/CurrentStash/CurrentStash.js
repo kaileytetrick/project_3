@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import down from "../../images/downarrow.png"
 import up from "../../images/uparrow.png"
+import "./CurrentStash.css"
 
 
 //trasfer prctice data to app.js state. 
@@ -29,11 +30,11 @@ class CurrentStash extends Component {
     return(
       <tbody>
         <tr>
-          <th scope="row">{this.props.id}</th>
-          <td>{this.props.itemname}</td>
-          <td>{this.props.quantity}
-            <button type="button" onClick={this.handleUpArrowClick} className="btn btn-default btn-group-vertical" role="group"> <img src={up}  alt={'up arrorw'} width="20" /> </button>
-            <button type="button" onClick={this.handleDownArrowClick} className="btn btn-default btn-group-vertical" role="group"> <img src={down} alt={'down arrow'} width="20" /> </button>
+          <th scope="row" className="align-middle">{this.props.category}</th>
+          <td className="align-middle">{this.props.itemname}</td>
+          <td className="align-middle">{this.props.quantity}
+            <button type="button" onClick={this.handleUpArrowClick} className="btn btn-default btn-group-vertical arrows" role="group"> <img src={up}  alt={'up arrorw'} width="20" /> </button>
+            <button type="button" onClick={this.handleDownArrowClick} className="btn btn-default btn-group-vertical arrows" role="group"> <img src={down} alt={'down arrow'} width="20" /> </button>
           </td>
         </tr>
       </tbody>
