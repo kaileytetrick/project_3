@@ -116,8 +116,13 @@ exports.user_changePassword = (req, res, next) =>{
       res.status(401).json({message: 'User does not exist'});
     });
 
-}
+};
+
+exports.logout = function(req, res) {
+  req.logout();
+  res.redirect('/');
+};
 
 exports.validate_token = (req,res,next) =>{
   res.status(200).json({message: 'Token OK'})
-}
+};

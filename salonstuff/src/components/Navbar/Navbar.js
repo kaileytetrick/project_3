@@ -9,7 +9,7 @@ const Navbar = (props) => (
         {props.isLoggedIn
         
         ?
-            (<li>Sign Out</li>)
+            (<li><NavLink to="/logout">Sign Out</NavLink></li>)
         :
             ( <Fragment>
                 <img src={logo} />
