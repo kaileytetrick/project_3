@@ -67,7 +67,7 @@ class App extends Component {
       <br />
 
           <header className="App-header">
-          <h1 className="App-title">Salon Stasher</h1>
+          <h1 className="App-title">Salon Stasher!</h1>
       </header>
       <header className="App-header-bot">
       </header>
@@ -79,6 +79,7 @@ class App extends Component {
       id={item.id}
       category={item.category}
       itemname={item.name ? item.name : item.category}
+      level={item.level ? item.level : "N/A"}
       quantity={item.quantity}
       passUpUpdatedStash={this.getUpdatedStashFromCurrentStash}
       />
@@ -86,6 +87,7 @@ class App extends Component {
       </Wrapper>
 
       <Add />
+
       <Footer />
   </div>
     )

@@ -37,9 +37,9 @@ class Add extends Component {
         console.log(this.state.selectedColor,'this is for real working');
         return (
             <div class="main">
-                <div> Add Items to Your Stash</div>
-                <Table>
-                    <thead>
+                <div text-align="center" className="add">ADD TO STASH</div>
+                <Table className="table">
+                    <thead className="thead-light">
                         <tr>
                             <th>Category</th>
                             <th>Name</th>
