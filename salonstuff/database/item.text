@@ -1,0 +1,70 @@
+COLOR CHART
+
+Gold-Beige "NGV"
+    10NGV
+    9NGV
+    8NGV
+    7NGV
+    6NGV
+    5NGV
+    4NGV
+
+    Copper-Bronze "NCG"
+    9NG
+    8NGC 
+    7NGC
+    6NCG or 6NAC
+    5NAC
+
+    Red "NR"
+    7NCR
+    6NRR
+    5NRM
+
+    Mahogany Chocolate "NGM"
+    7NGM
+    6NGM
+    5NGM
+    4NMG
+
+    Neutral "NNN"
+    6.5NNN
+    5.5NNN
+    4.5NNN
+    3.5NNN
+    2.5NNN
+
+    Ash-Gray "NA"
+    10NA
+    9NA
+    5NAC4NA
+    3NNA
+    2NNA
+
+    Ash-Violet "NVA"
+    10NVA
+    9NV 
+    8NVA
+    7NVA
+    6NAV
+    3NVV
+    2NAA
+
+    DEVELOPER
+
+    Level 10
+    Level 20
+    Level 30
+    Level 40
+
+    SHAMPOO
+
+    CONDITIONER
+
+    Items{
+        id:
+        name:
+        code[]
+        brand
+        category:""
+    }
