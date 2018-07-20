@@ -22,6 +22,12 @@ class App extends Component {
     return (
       <div className="App">
       <br />
+
+          <header className="App-header">
+          <h1 className="App-title">Salon Stasher</h1>
+      </header>
+      <header className="App-header-bot">
+      </header>
       <font className="intro">Welcome to your Salon Stasher, {username}!</font><p>
       <Wrapper>
         
