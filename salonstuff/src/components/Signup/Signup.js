@@ -6,7 +6,7 @@ const Signup = ({onChange, onCLick, signup, ...props}) => (
     <label htmlFor="email">Email </label>
     <input type="email" onChange={onChange} name="email" id="email"/>
     <label htmlFor="password">Password </label>
-    <input type="password" onChange={onChange} name="password" id="email"/>
+    <input type="password" onChange={onChange} name="password" id="password"/>
     <button onClick={signup}>Sign Up</button>
 </form>
 )

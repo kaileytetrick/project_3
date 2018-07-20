@@ -47,6 +47,7 @@ const withAuthentication = AuthComponent =>
 
     submitSignup = (event) => {
       event.preventDefault();
+      console.log('work!!!!!',this.state.email.toLowerCase())
       this.Auth.signUp(this.state.email.toLowerCase(), this.state.password)
         .then((result) => {
           if (result.status === 201) {
@@ -54,11 +55,11 @@ const withAuthentication = AuthComponent =>
               isLoggedIn: true,
             });
             // updates isLoggedIn in App component
-            this.props.updateAuth();
+            // this.props.updateAuth();
           }
         })
         .catch((err) => {
-          console.log('error from auth creation', err.response.data.message);
+          console.log('error from auth creation', err);
           this.setState({
             isLoggedIn: false,
           });

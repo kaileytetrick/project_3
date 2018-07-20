@@ -38,6 +38,7 @@ exports.user_login = (req, res, next) => {
 exports.user_signup = (req, res, next) => {
   const reqEmail = req.body.email
   const reqPassword = req.body.password
+  console.log(reqEmail)
 
   if(reqEmail === '' || reqPassword === ''){
     return res.status(400).json({message: "Email or password can not be empty."})
@@ -48,21 +49,21 @@ exports.user_signup = (req, res, next) => {
         if(user){
           console.log('user taken')
           return res.status(400).json({message: "Email already taken"})
-        } else{
+        } else {
           bcrypt.hash(reqPassword, salt)
             .then( hash =>{
+              console.log('!!!!!!========>', reqEmail)
               User.create({
-                email: reqEmail,
+                email: req.body.email,
                 password: hash,
               })
                 .then( result =>{
-                  console.log(result)
+                  console.log('Please Work!!!!',result)
                   const userData = {
                     id: result._id,
-                    role: result.role,
                   }
                   jwt.sign(userData, process.env.JWT_SECRET, tokenExpTime, (err, token)=>{
-                    if(err){ res.status(400).json({message: 'Error createing user'})}
+                    if(err){ res.status(400).json({message: 'Error creating user'})}
                     res.status(201).json({
                       message: 'User Created',
                       token: token,
