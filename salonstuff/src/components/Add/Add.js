@@ -42,7 +42,7 @@ class Add extends Component {
                     <thead className="thead-light">
                         <tr>
                             <th>Category</th>
-                            <th>Name</th>
+                            <th>Item Name</th>
                             <th>Level</th>
                             <th>Quantity</th>
                         </tr>

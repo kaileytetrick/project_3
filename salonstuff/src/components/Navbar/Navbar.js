@@ -1,5 +1,6 @@
 import React, {Fragment} from "react";
 import {NavLink} from "react-router-dom";
+import logo from '../../images/logo.png';
 
 const Navbar = (props) => (
     <nav>
@@ -11,6 +12,7 @@ const Navbar = (props) => (
             (<li>Sign Out</li>)
         :
             ( <Fragment>
+                <img src={logo} />
             <li><NavLink to="/login">Login</NavLink></li>
             <li><NavLink to="/signup">Sign Up</NavLink></li>
              </Fragment>

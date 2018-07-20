@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import './Main.css';
-import Wrapper from "../Wrapper";
-import CurrentStash from "../CurrentStash/CurrentStash";
-import Footer from "../Footer";
-import Add from "../Add/Add";
+import './App.css';
+import Wrapper from "./components/Wrapper";
+import CurrentStash from "./components/CurrentStash/CurrentStash";
+import Footer from "./components/Footer";
+import Add from "./components/Add/Add";
 
-class Main extends Component {
+class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -58,13 +58,13 @@ class Main extends Component {
 
   render() {
     return (
-      <div className="Main">
+      <div className="App">
       <br />
 
-          <header className="Main-header">
-          <h1 className="Main-title">Salon Stasher!</h1>
+          <header className="App-header">
+          <h1 className="App-title">Salon Stasher!</h1>
       </header>
-      <header className="Main-header-bot">
+      <header className="App-header-bot">
       </header>
       <Wrapper>
         
@@ -90,4 +90,4 @@ class Main extends Component {
 }
 
 
-export default Main;
+export default App;

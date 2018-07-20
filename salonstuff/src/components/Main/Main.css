@@ -1,0 +1,35 @@
+.Main {
+    text-align: center;
+    font-family: 'PT Sans', sans-serif;
+  }
+  
+  .Main-header {
+    background-color: #95DCD5;
+    height: 100px;
+    padding: 5px;
+    color: white;
+  }
+  
+  .login {
+    color:#000;
+    margin:0px;
+    font-size:10pt;
+  }
+  
+  .Main-header-bot {
+    background-image:url(../../images/zigzag.png);
+    height:45px;
+    border-bottom:1px solid #000000;
+  }
+  
+  .Main-title {
+    font-size: 60pt;
+    font-family: 'Pacifico', cursive;
+  }
+  
+  .intro {
+    font-size:16pt;
+    font-weight:bold;
+    padding:20px;
+  }
+  
