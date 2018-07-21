@@ -3,7 +3,7 @@ import './Main.css';
 import Wrapper from "../Wrapper";
 import CurrentStash from "../CurrentStash/CurrentStash";
 import Footer from "../Footer";
-import Add from "../Add/Add";
+import AddForm from "../AddForm/AddForm";
 
 class Main extends Component {
   constructor(props) {
@@ -81,7 +81,7 @@ class Main extends Component {
       ))}
       </Wrapper>
 
-      <Add />
+      <AddForm />
 
       <Footer />
   </div>
