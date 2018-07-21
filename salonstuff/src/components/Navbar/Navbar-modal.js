@@ -19,6 +19,7 @@ class Navbar extends React.Component {
     render() {
         const {props} = this.props;
         return (
+            <Fragment>
             <nav>
                 {this.props.isLoggedIn
     
@@ -28,7 +29,7 @@ class Navbar extends React.Component {
                     ( <Fragment>
                         <div className="login"><br />
                             <img src={logo} /><br />
-                            <NavLink to="/login"><button type="button" className="butn">Login</button></NavLink>
+                            <button type="button" className="butn" onClick={this.show}>Login</button>
                             <NavLink to="/signup"><button type="button" className="butn">Sign Up</button></NavLink>
                         </div><br />
                         <div className="zigzagline"></div>
@@ -36,9 +37,22 @@ class Navbar extends React.Component {
                     )    
                 }
             </nav>
-
-        )
-    }
+            {
+        
+                this.show && (
+                    <Modal show={this.state.show} onClose={this.props.close}>
+                    <div className="module">
+                        <label htmlFor="email">Email </label>
+                        <input type="email" name="email" id="email" /> <br />
+                        <label htmlFor="password">Password </label>
+                        <input type="password" name="password" id="email" /><br />
+                        <button className="button-submit">Submit</button>
+                    </div>
+                    </Modal>
+                )
+            }
+        )</Fragment>
+        )}
 }
 
 export default Navbar;

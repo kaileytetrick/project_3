@@ -1,15 +1,23 @@
 import React from "react";
 import withAuthentication from "../../hoc/AuthHOC";
+import "./Login.css";
 
 const Login = ({onChange, login, signup, ...props}) => (
-<form>
-    <label htmlFor="email">Email </label>
-    <input type="email" name="email" id="email" onChange={onChange}/> 
-    <label htmlFor="password">Password </label>
-    <input type="password" name="password" id="email" onChange={onChange}/>
-    <button onClick={login}>Submit</button>
-</form>
+    <div className="module">
+    <table align="center">
+        <tr>
+            <td><label htmlFor="email">Email </label></td>
+            <td><input type="email" onChange={onChange} name="email" id="email"/></td>
+        </tr>
+        <tr>
+            <td><label htmlFor="password">Password </label></td>
+            <td><input type="password" onChange={onChange} name="password" id="password"/></td>
+        </tr>
+        <tr colSpan="2">
+            <td align="center"><button className="button-submit" onClick={login}>Login</button></td>
+        </tr>
+    </table>
+    </div>
 )
 
 export default withAuthentication(Login);
-

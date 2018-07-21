@@ -28,7 +28,7 @@ const withAuthentication = AuthComponent =>
             this.props.changeLogin();
             // updates isLoggedIn in App component
 
-            this.props.history.push('/');
+            this.props.history.push('/home');
           } else {
             this.setState({
               isLoggedIn: false,
@@ -50,7 +50,7 @@ const withAuthentication = AuthComponent =>
         .then((result) => {
           if (result.status === 201) {
             this.props.changeLogin();
-            this.props.history.push('/');
+            this.props.history.push('/home');
             // updates isLoggedIn in App component
             // this.props.updateAuth();
           }
