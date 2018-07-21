@@ -25,11 +25,9 @@ const withAuthentication = AuthComponent =>
         .then((result) => {
           console.log(result);
           if (result.status === 200) {
-            this.setState({
-              isLoggedIn: true,
-            });
+            this.props.changeLogin();
             // updates isLoggedIn in App component
-            this.props.updateAuth();
+
             this.props.history.push('/');
           } else {
             this.setState({
@@ -47,18 +45,18 @@ const withAuthentication = AuthComponent =>
 
     submitSignup = (event) => {
       event.preventDefault();
+      console.log('work!!!!!',this.state.email.toLowerCase())
       this.Auth.signUp(this.state.email.toLowerCase(), this.state.password)
         .then((result) => {
           if (result.status === 201) {
-            this.setState({
-              isLoggedIn: true,
-            });
+            this.props.changeLogin();
+            this.props.history.push('/');
             // updates isLoggedIn in App component
-            this.props.updateAuth();
+            // this.props.updateAuth();
           }
         })
         .catch((err) => {
-          console.log('error from auth creation', err.response.data.message);
+          console.log('error from auth creation', err);
           this.setState({
             isLoggedIn: false,
           });
