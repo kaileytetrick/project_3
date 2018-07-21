@@ -2,7 +2,13 @@
     background-color: #95DCD5;
     height:30px;
     text-align:right;
-    margin:0px;
+    margin-bottom:-30px;
+}
+
+a {
+    color:#000000;
+    text-decoration:underline;
+    font-family: 'PT Sans', sans-serif;
 }
 
 .login {

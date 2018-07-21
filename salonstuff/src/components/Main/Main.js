@@ -62,7 +62,7 @@ class Main extends Component {
       <br />
 
           <header className="Main-header">
-          <h1 className="Main-title">Salon Stasher!</h1>
+          <h1 className="Main-title">Salon Stasher</h1>
       </header>
       <header className="Main-header-bot">
       </header>
