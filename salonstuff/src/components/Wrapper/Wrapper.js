@@ -7,6 +7,7 @@ const Wrapper = props => <div className="wrapper">
         <tr>
         <th scope="col">Category</th>
         <th scope="col">Item Name</th>
+        <th scope="col">Level</th>
         <th scope="col">Quantity</th>
         </tr>
     </thead>
