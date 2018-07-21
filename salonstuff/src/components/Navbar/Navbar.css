@@ -1,0 +1,40 @@
+.signedin {
+    background-color: #95DCD5;
+    height:30px;
+    text-align:right;
+    margin:0px;
+}
+
+.login {
+    margin: auto;
+    text-align:center;
+}
+
+.butn {
+    padding:10px;
+    margin:10px;
+    background-color: #ffffff;
+    color: #78BDB6;
+    border: #95DCD5 solid 2px;
+    border-radius: 20px;
+    font-size:20pt;
+    font-family: 'Pacifico', cursive;
+    box-shadow: 0 4px #bcbcbc;
+}
+
+.butn:hover {
+    background-color: #f4f4f4;
+}
+
+.butn:active {
+    background-color: #ffffff;
+    box-shadow: 0 2px #bcbcbc;
+    transform: translateY(4px)
+}
+
+.zigzagline {
+    background-image:url(../../images/zigzag.png);
+    height:49px;
+    width:100%;
+    margin:0px;
+  }

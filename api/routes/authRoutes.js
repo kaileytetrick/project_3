@@ -11,7 +11,6 @@ router.get('/validateToken', authCheck, authController.validate_token)
 router.post('/login', authController.user_login );
 router.post('/signup', authController.user_signup );
 router.get('/logout', authController.logout );
-router.get('/home');
 router.put('/changePassword', authCheck, authController.user_changePassword);
 
 

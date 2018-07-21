@@ -1,0 +1,30 @@
+.button-submit {
+    padding:10px;
+    margin:10px;
+    background-color: #ffffff;
+    color: #78BDB6;
+    border: #95DCD5 solid 2px;
+    border-radius: 20px;
+    font-size:10pt;
+    font-family: 'Pacifico', cursive;
+    box-shadow: 0 4px #bcbcbc;
+}
+
+.button-submit:hover {
+    background-color: #f4f4f4;
+}
+
+.button-submit:active {
+    background-color: #ffffff;
+    box-shadow: 0 2px #bcbcbc;
+    transform: translateY(4px)
+}
+
+.module {
+    margin:auto;
+    width:50%;
+    padding:20px;
+    text-align:center;
+    font-family: 'PT Sans', sans-serif;
+    font-size:12pt;
+}

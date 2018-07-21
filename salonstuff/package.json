@@ -12,7 +12,8 @@
     "react-dropdown-autocomplete": "^1.2.7",
     "react-google-login": "^3.2.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "simple-react-modal": "^0.5.1"
   },
   "scripts": {
     "start": "react-scripts start",

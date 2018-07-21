@@ -27,7 +27,7 @@ class App extends React.Component {
             <Switch> 
                 <Route exact path="/login" render={(props) => <Login {...props} changeLogin={this.changeLogin}/>}/>
                 <Route exact path="/signup" render={(props) => <Signup {...props} changeLogin={this.changeLogin}/>}/>
-                <Route exact path="/" component={Main}/>
+                <Route exact path="/home" component={Main}/>
             </Switch>
             </Fragment>
         )
