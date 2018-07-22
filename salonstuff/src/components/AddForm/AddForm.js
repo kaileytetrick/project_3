@@ -29,7 +29,7 @@ class AddForm extends React.Component {
                 </select>
                 <label htmlFor="name">Name</label>
                 <select>
-                    <option value="nocolor">No Color</option>
+                    <option value="nocolor  ">No Color</option>
                     <option value="red">Red</option>
                     <option value="orange">Orange</option>
                     <option value="blonde">Blonde</option>
