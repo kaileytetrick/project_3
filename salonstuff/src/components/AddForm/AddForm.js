@@ -18,9 +18,10 @@ class AddForm extends React.Component {
             quantity: this.state.quantity
         }
 
-        axios.post('/additem', stashItem)
+        axios.post('/stashRoute/additem', stashItem)
             .then(result => {
                 this.setState({category: '', name: '', quantity: null});
+                this.props.handleDB();
                 console.log("Success")
             })
             .catch(err => {
@@ -41,6 +42,7 @@ class AddForm extends React.Component {
             <div className="form-group col-auto my-1">
                 <label for="category">Category</label><br />
                     <select id="category" name="category" onChange={this.onChange}>
+                        <option></option>
                         <option>Color</option>
                         <option>Shampoo</option>
                         <option>Conditioner</option>

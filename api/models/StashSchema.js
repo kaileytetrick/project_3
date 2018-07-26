@@ -13,6 +13,6 @@ var StashSchema = new Schema({
 }
 );
 
-var Stash = mongoose.model("Stash", StashSchema);
+// var Stash = mongoose.model("Stash", StashSchema);
 
-module.exports = Stash;
+module.exports = Stash = mongoose.model('stashes', StashSchema);
