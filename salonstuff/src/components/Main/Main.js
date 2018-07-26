@@ -4,57 +4,52 @@ import Wrapper from "../Wrapper";
 import CurrentStash from "../CurrentStash/CurrentStash";
 import Footer from "../Footer";
 import AddForm from "../AddForm/AddForm";
+import axios from 'axios';
 
 class Main extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      stash: [
-        {
-          name: 'ambrosia',
-          level: '5000',
-          quantity: 7,
-          id: 1,
-          category: "color"
-        },
-        {
-          name: 40,
-          quantity: 4,
-          level: 3,
-          id: 34,
-          category: "developer"
-        },
-        {
-          quantity: 4,
-          id: 55,
-          category: "shampoo"
-        },
-        {
-          quantity: 4,
-          id: 100,
-          category: "conditioner"
-       },
-      ]
-    }  
-
+  state = {
+    fullstash: []
   }
 
-  getUpdatedStashFromCurrentStash = (id, newQuantity) => {
-  //   this.setState({
-  //     stash: updatedStash
+  componentDidMount() {
+    this.handleDB();
+  }
+
+  handleDB = () => {
+
+    axios.get('/fullstash')
+        .then(result => {
+            console.log(result)
+        })
+        .catch(err => {
+            console.log("Failure")
+        })
+
+  }   
+
+  onChange = (event) => {
+    this.setState({ [event.target.name]:event.target.value });
+  }
+
+  // getUpdatedStashFromCurrentStash = (id, newQuantity) => {
+  // //   this.setState({
+  // //     stash: updatedStash
+  // //   })
+  //   var itemIndex = this.state.stash.findIndex(function(item){
+  //     return item.id === id
   //   })
-    var itemIndex = this.state.stash.findIndex(function(item){
-      return item.id === id
-    })
-    var tempStashState = this.state.stash;
-    console.log('newQuantity', newQuantity)
-    tempStashState[itemIndex].quantity = newQuantity
-    console.log('expected Index', itemIndex)
-    this.setState({
-      stash: tempStashState
-    })    
-  }
+  //   var tempStashState = this.state.stash;
+  //   console.log('newQuantity', newQuantity)
+  //   tempStashState[itemIndex].quantity = newQuantity
+  //   console.log('expected Index', itemIndex)
+  //   this.setState({
+  //     stash: tempStashState
+  //   })    
+  // }
   
+  // componentDidMount() {
+
+  // };
 
   render() {
     return (
@@ -68,17 +63,16 @@ class Main extends Component {
       </header>
       <Wrapper>
         
-      {this.state.stash.map((item, index) => (
+      {/* {this.state.stash.map((item, index) => (
       <CurrentStash 
       key={index}
       id={item.id}
       category={item.category}
       itemname={item.name ? item.name : item.category}
-      level={item.level ? item.level : "N/A"}
       quantity={item.quantity}
       passUpUpdatedStash={this.getUpdatedStashFromCurrentStash}
       />
-      ))}
+      ))} */}
       </Wrapper>
 
       <AddForm />

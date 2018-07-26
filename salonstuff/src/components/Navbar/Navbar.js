@@ -23,7 +23,7 @@ class Navbar extends React.Component {
                 {this.props.isLoggedIn
     
                 ?
-                    (<div className="signedin"><NavLink to="/logout">Sign Out</NavLink></div>)
+                    (<div className="signedin"><a href='/' onClick={this.props.signOut}>Sign Out</a></div>)
                 :
                     ( <Fragment>
                         <div className="login"><br />
@@ -31,7 +31,7 @@ class Navbar extends React.Component {
                             <NavLink to="/login"><button type="button" className="butn">Login</button></NavLink>
                             <NavLink to="/signup"><button type="button" className="butn">Sign Up</button></NavLink>
                         </div><br />
-                        <div className="zigzagline"></div>
+                        <div className="zigzagline"></div><br />                        
                     </Fragment>
                     )    
                 }

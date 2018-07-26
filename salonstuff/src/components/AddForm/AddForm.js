@@ -1,57 +1,64 @@
 import React from 'react';
+import "./AddForm.css";
+import axios from 'axios';
 
 class AddForm extends React.Component {
     state = {
         category: '',
         name: '',
-        level: '',
-        quantity: null,
-        shampoo: {
-            quantity: null,
-        },
-        conditioner: {
-            quantity: null
-        },
-        developer: {
-            level: null,
-            quantity: null,
-        }
+        quantity: null
     }
+
+    handleSubmit = (event) => {
+        event.preventDefault();
+
+        const stashItem = {
+            category: this.state.category,
+            name: this.state.name,
+            quantity: this.state.quantity
+        }
+
+        axios.post('/additem', stashItem)
+            .then(result => {
+                this.setState({category: '', name: '', quantity: null});
+                console.log("Success")
+            })
+            .catch(err => {
+                console.log("Failure")
+            })
+
+    }
+
+    onChange = (event) => {
+        this.setState({ [event.target.name]:event.target.value });
+      }
+
     render() {
         return (
-            <form>
-                <label htmlFor="category">Category</label>
-                <select>
-                    <option value="color">Color</option>
-                    <option value="developer">Developer</option>
-                    <option value="conditioner">Conditioner</option>
-                    <option value="shampoo">Shampoo</option>
-                </select>
-                <label htmlFor="name">Name</label>
-                <select>
-                    <option value="nocolor">No Color</option>
-                    <option value="red">Red</option>
-                    <option value="orange">Orange</option>
-                    <option value="blonde">Blonde</option>
-                    <option value="green">Green</option>
-                    <option value="brown">Brown</option>
-                    <option value="grey">Grey</option>
-                    <option value="pink">Pink</option>
-                    <option value="purple">Purple</option>
-                </select>
-                <label htmlFor="level">Level</label>
-                <select>
-                    <option value="nolevel">No Level</option>
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="20">20</option>
-                    <option value="30">30</option>
-                    <option value="40">40</option>
-                    <option value="50">50</option>
-                </select>
-                <label htmlFor="quantity">Quantity:</label>
-                   <input type="text" name="quantity"></input>
+            <div className="addform">
+            <center>Add to Stash</center><br />
+            <form onSubmit={this.handleSubmit}>
+            <div className="form-group col-auto my-1">
+                <label for="category">Category</label><br />
+                    <select id="category" name="category" onChange={this.onChange}>
+                        <option>Color</option>
+                        <option>Shampoo</option>
+                        <option>Conditioner</option>
+                        <option>Developer</option>
+                        <option>Miscellaneous</option>
+                    </select><br />
+            </div>
+            <div className="form-group col-auto">
+                <label for="name">Item Name/Brand</label><br />
+                    <input type="text" id="name" name="name" onChange={this.onChange} />
+            </div>
+            <div className="form-group col-auto">
+                <label htmlFor="quantity">Quantity:</label><br />
+                   <input type="text" name="quantity" onChange={this.onChange}></input><br /><br />
+                   <button type="submit" className="btn btn-secondary">Submit</button>
+            </div>
             </form>
+            </div>
         )
     }
 
