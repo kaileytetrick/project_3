@@ -7,27 +7,44 @@ import axios from 'axios';
 
 class CurrentStash extends Component {
 
-  handleUpArrowClick = (event) => {
-
-    let id = event.target.getAttribute('data-id');
-    console.log(id);
-
-    axios.put(`/stashRoute/fullstash/${id}`)
-      .then(result => {
-        const newQuant = this.props.quantity + 1;
-        console.log(newQuant);
-        this.props.handleDB();
-      })
-    
-   // this.props.id, this.props.quantity +1)
+  state = {
+    quantity: this.props.quantity
   }
 
+  handleUp = (event) => {
 
-  handleDownArrowClick = () => {
-    this.props.passUpUpdatedStash(this.props.id, this.props.quantity -1)
+    let id = event.target.getAttribute('data-id');
+    const newQuant = this.props.quantity + 1;
+
+    let updatedQuant = {
+      quantity: newQuant
+    }
+
+    axios.put(`/stashRoute/fullstash/${id}`, updatedQuant)
+      .then(result => {
+        this.props.handleDB();
+      })
+
+  }
+
+  handleDown = (event) => {
+
+    let id = event.target.getAttribute('data-id');
+    const newQuant = this.props.quantity + -1;
+
+    let updatedQuant = {
+      quantity: newQuant
+    }
+
+    axios.put(`/stashRoute/fullstash/${id}`, updatedQuant)
+      .then(result => {
+        this.props.handleDB();
+      })
+
   }
 
   handleRemove = (event) => {
+    event.preventDefault();
 
     let id = event.target.getAttribute('data-id');
     console.log(id);
@@ -46,17 +63,15 @@ class CurrentStash extends Component {
 
   render(){
     return(
-      <tbody>
         <tr>
           <th scope="row" className="align-middle">{this.props.category}</th>
           <td className="align-middle">{this.props.itemname}</td>
           <td className="align-middle">{this.props.quantity}
-            <button type="button" data-id={this.props.id} onClick={this.handleUpArrowClick} className="btn btn-default btn-group-vertical arrows" role="group"> <img src={up}  alt={'up arrow'} width="20" /> </button>
-            <button type="button" data-id={this.props.id} onClick={this.handleDownArrowClick} className="btn btn-default btn-group-vertical arrows" role="group"> <img src={down} alt={'down arrow'} width="20" /> </button>
-            <button type="button" data-id={this.props.id} onClick={this.handleRemove} className="btn btn-default btn-group-vertical remove" role="group"> <img src={remove} alt={'remove'} width="10" /> </button>
+            <button type="button" className="btn btn-default btn-group-vertical arrows" role="group" data-id={this.props.id} onClick={this.handleUp} > <img src={up}  alt={'up arrow'} width="20"  data-id={this.props.id} onClick={this.handleUp} /> </button>
+            <button type="button" className="btn btn-default btn-group-vertical arrows" role="group" data-id={this.props.id} onClick={this.handleDown} > <img src={down} alt={'down arrow'} width="20"  data-id={this.props.id} onClick={this.handleDown} /> </button>
+            <button type="button" className="btn btn-default btn-group-vertical remove" role="group" data-id={this.props.id} onClick={this.handleRemove} > <img src={remove} alt={'remove'} width="10" data-id={this.props.id} onClick={this.handleRemove} /> </button>
           </td>
         </tr>
-      </tbody>
     )
   }
 }

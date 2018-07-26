@@ -32,27 +32,6 @@ class Main extends Component {
     this.setState({ [event.target.name]:event.target.value });
   }
 
-  getUpdatedStashFromCurrentStash = (id, newQuantity) => {
-
-    var itemIndex = this.state.fullstash.findIndex(function(item){
-      return item.id === id
-    })
-
-    var tempStashState = this.state.fullstash;
-
-    console.log('newQuantity', newQuantity)
-
-    tempStashState[itemIndex].quantity = newQuantity
-
-    console.log('expected Index', itemIndex)
-
-    this.setState({
-      fullstash: tempStashState
-    })    
-  }
-
-
-
   render() {
     return (
       <div className="Main">
