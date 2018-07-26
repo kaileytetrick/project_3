@@ -10,7 +10,9 @@ const Wrapper = props => <div className="wrapper">
         <th scope="col">Quantity</th>
         </tr>
     </thead>
+    <tbody>
         {props.children}
+    </tbody>
     </table>
 </div>;
 
