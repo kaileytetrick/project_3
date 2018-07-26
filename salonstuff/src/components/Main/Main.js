@@ -17,9 +17,10 @@ class Main extends Component {
 
   handleDB = () => {
 
-    axios.get('/fullstash')
+    axios.get('/stashRoute/fullstash')
         .then(result => {
-            console.log(result)
+          console.log(result);
+          this.setState({fullstash: result.data})
         })
         .catch(err => {
             console.log("Failure")
@@ -31,25 +32,26 @@ class Main extends Component {
     this.setState({ [event.target.name]:event.target.value });
   }
 
-  // getUpdatedStashFromCurrentStash = (id, newQuantity) => {
-  // //   this.setState({
-  // //     stash: updatedStash
-  // //   })
-  //   var itemIndex = this.state.stash.findIndex(function(item){
-  //     return item.id === id
-  //   })
-  //   var tempStashState = this.state.stash;
-  //   console.log('newQuantity', newQuantity)
-  //   tempStashState[itemIndex].quantity = newQuantity
-  //   console.log('expected Index', itemIndex)
-  //   this.setState({
-  //     stash: tempStashState
-  //   })    
-  // }
-  
-  // componentDidMount() {
+  getUpdatedStashFromCurrentStash = (id, newQuantity) => {
 
-  // };
+    var itemIndex = this.state.fullstash.findIndex(function(item){
+      return item.id === id
+    })
+
+    var tempStashState = this.state.fullstash;
+
+    console.log('newQuantity', newQuantity)
+
+    tempStashState[itemIndex].quantity = newQuantity
+
+    console.log('expected Index', itemIndex)
+
+    this.setState({
+      fullstash: tempStashState
+    })    
+  }
+
+
 
   render() {
     return (
@@ -63,19 +65,20 @@ class Main extends Component {
       </header>
       <Wrapper>
         
-      {/* {this.state.stash.map((item, index) => (
+      {this.state.fullstash.map((item, index) => (
       <CurrentStash 
       key={index}
-      id={item.id}
+      id={item._id}
       category={item.category}
       itemname={item.name ? item.name : item.category}
       quantity={item.quantity}
       passUpUpdatedStash={this.getUpdatedStashFromCurrentStash}
+      handleDB={this.handleDB}
       />
-      ))} */}
+      ))}
       </Wrapper>
 
-      <AddForm />
+      <AddForm handleDB={this.handleDB} />
 
       <Footer />
   </div>
