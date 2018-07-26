@@ -29,10 +29,17 @@ router.post("/additem", (req, res) => {
   
   });
   
-  router.put("/fullstash/:id", (req, res) => {
-    Stash.findOneAndUpdate({_id: req.params.id}, {quantity: req.params.quantity})
-      .then(response => res.json({ response }))
-      .catch(error => console.log('error changing quantity', error))
+  router.put('/fullstash/:id', (req,res) => {
+      console.log(req.params.id);
+      console.log(req.body.quantity);
+    Stash.update(
+      { _id: req.params.id },
+      { quantity: req.body.quantity }
+    )
+      .then( response => {
+        res.json({response})
+      })
+      .catch(error => console.log('error', error))
   });
   
   router.delete("/fullstash/:id", (req, res) => {
