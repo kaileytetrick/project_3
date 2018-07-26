@@ -3,10 +3,9 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var StashSchema = new Schema({
-    category: String,
-    name: String,
-    level: Number,
-    quantity: Number,
+    category: {type: String},
+    name: {type: String},
+    quantity: {type: Number},
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"

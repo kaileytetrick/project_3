@@ -23,7 +23,6 @@ const withAuthentication = AuthComponent =>
       event.preventDefault();
       this.Auth.login(this.state.email.toLocaleLowerCase(), this.state.password)
         .then((result) => {
-          console.log(result);
           if (result.status === 200) {
             this.props.changeLogin();
             // updates isLoggedIn in App component

@@ -13,8 +13,15 @@ class App extends React.Component {
     componentDidMount() {
         if (localStorage.getItem("tkid")) {
             this.setState ({isLoggedIn: true})
-        }
+        };
+        console.log(this.props);
     }
+
+    signOut = () => {
+        localStorage.removeItem("tkid");
+        this.setState ({isLoggedIn:false});
+        // this.props.history.push('/');
+    };
 
     changeLogin = () => {
         this.setState({isLoggedIn: true})
@@ -23,7 +30,7 @@ class App extends React.Component {
     render() {
         return(
             <Fragment>
-                <Navbar isLoggedIn={this.state.isLoggedIn} />
+                <Navbar isLoggedIn={this.state.isLoggedIn} signOut={this.signOut} />
             <Switch> 
                 <Route exact path="/login" render={(props) => <Login {...props} changeLogin={this.changeLogin}/>}/>
                 <Route exact path="/signup" render={(props) => <Signup {...props} changeLogin={this.changeLogin}/>}/>
@@ -31,8 +38,6 @@ class App extends React.Component {
             </Switch>
             </Fragment>
         )
-
-   
     }
 }
 

@@ -10,7 +10,6 @@ const router = express.Router();
 router.get('/validateToken', authCheck, authController.validate_token)
 router.post('/login', authController.user_login );
 router.post('/signup', authController.user_signup );
-router.get('/logout', authController.logout );
 router.put('/changePassword', authCheck, authController.user_changePassword);
 
 

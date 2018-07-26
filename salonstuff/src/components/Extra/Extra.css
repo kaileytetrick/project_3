@@ -1,0 +1,19 @@
+.zigzagline {
+    background-image:url(../../images/zigzag.png);
+    height:49px;
+    width:100%;
+    margin:0px;
+  }
+
+  h2 {
+      font-family: 'Pacifico', cursive;
+      color: #78BDB6;
+      text-align:center;
+  }
+
+  .extra {
+    color:#000000;
+    font-family: 'PT Sans', sans-serif;
+    margin: auto;
+    width:50%;
+  }
